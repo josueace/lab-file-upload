@@ -5,9 +5,13 @@ const createError = require('http-errors');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 
+const flash = require("connect-flash");
+const session = require("express-session");
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
 // Set up the database
 require('./configs/db.config');
@@ -20,6 +24,8 @@ const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
 
 const app = express();
+
+
 require('./configs/session.config')(app);
 
 // Express View engine setup

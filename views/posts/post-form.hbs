@@ -1,0 +1,21 @@
+<div id="form">
+  <h2>Post blog</h2>
+  <form action="/post" method="POST" enctype="multipart/form-data">
+    <label for="blog">Blog</label>
+    <input type="text" id="blog" name="content" placeholder="insert text" />
+
+
+    <label for="picName">name</label>
+    <input type="text" name="picName" id="picName" placeholder="insert name" />
+
+    <input type="file" name="photo">
+
+    <button type="submit">Create blog</button>
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+
+  </form>
+</div>

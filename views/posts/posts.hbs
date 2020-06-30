@@ -1,0 +1,6 @@
+{{#each posts}}
+<h3>{{ this.picName }}</h3>
+<p>{{this.content}}</p>
+    <img src="{{ this.picPath }}" alt="{{ this.picName }}" />
+    <a href="/details/{{this._id}}">See Details</a>
+{{/each}}
